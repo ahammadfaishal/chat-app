@@ -1,0 +1,33 @@
+<div class="form-group card chat">
+    <div class="chat-history" *ngIf="messageList.length>0">
+        <ul>
+            <li *ngFor="let message of messageList" [class.clearfix]="!message.isSender">
+                <div class="message-data" [class.align-right]="!message.isSender">
+                    <span class="message-data-time">{{message.time | date: 'mediumDate'}}</span> &nbsp; &nbsp;
+                    <span class="message-data-name">{{message.isSender ? 'Me' : 'Sender'}}</span> <i class="fa fa-circle"
+                        [ngClass]="message.isSender ? 'me' : 'online'"></i>
+
+                </div>
+                <div class="message" [ngClass]="message.isSender ? 'my-message' : 'other-message float-right'">
+                    {{message.msg}}
+                </div>
+            </li>
+        </ul>
+
+    </div> 
+
+    <div class="chat-message clearfix fade-in-text">
+
+        <form (ngSubmit)="onSubmit()" action="">
+         
+                <textarea class="form-control input" name="message-to-send" id="message-to-send" (keyup.enter)="onSubmit()"
+                    placeholder="Type your message" required [(ngModel)]="model" name="msg" rows="3"></textarea>
+
+                <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-file-image-o"></i>
+                <button type="submit" class="btn btn-outline-secondary button-css">Send Message</button>
+           
+        </form>
+    </div> 
+
+</div> 
