@@ -11,7 +11,7 @@ Chat application using socket programming
 - Install packages using ```npm install``` or ```yarn```.
 - Use ```node index.js``` to run server.
 - Use ```ng serve --open``` to run client. 
-- Open two different browser to check chatting experiences.
+- Open two different browser and navigate to [localhost:4200](http://localhost:4200/) to enjoy chatting experiences.
 
 ## Contributing
 
